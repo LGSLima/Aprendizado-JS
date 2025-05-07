@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área das Figuras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <h1>Cálculo da Área das Figuras</h1>
+    </div>
+
+    <div id="conteudo">
+        <div id="conteudo2">
+            <div id="figuras">
+                <h3>Clique na figura que deseja calcular a área.</h3>
+                <br>
+
+                <div id="conteiner-figuras">
+                    <div class="figura-cont">
+                        <img src="circle_PNG4.png" style="width: 25%;">
+                        <span>Círculo</span>
+                    </div>
+
+                    <div class="figura-cont">
+                        <img src="OIP.png" style="width: 105px;">
+                        <span>Triângulo</span>
+                    </div>
+
+                    <div class="figura-cont">
+                        <img src="Retangulo-Png-1-1024x1024.png" style="width: 100%;">
+                        <span>Triângulo</span>
+                    </div>
+                </div>
+                
+                <span id="idadeRes"></span>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <span>&copy; Luís Lima - 2025</span>
+    </div>
+
+    <script>
+        function area() {
+            var idade = parseInt(document.getElementById('idade').value);
+        
+            if(isNaN(idade)) {
+                alert('Você não digitou nenhuma idade!');
+
+            } else if(idade <= 0) {
+                alert('Você digitou uma idade inválida!');
+
+            } else if(idade < 16) {
+                document.getElementById('idadeRes').textContent = 'Você não está apto(a) a votar!';
+
+            } else {
+                document.getElementById('idadeRes').textContent = 'Você está apto(a) a votar!';
+
+            }
+        }
+    </script>
+</body>
+</html>

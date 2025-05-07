@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #3a4046;
+    color: #f8f9fa;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    background-color: #3a4046;
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.4);
+}
+
+#conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#conteudo2 {
+    color: #3a4046;
+    background-color: #f8f9fa;
+    height: 400px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 10px 3px rgb(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+#figuras {
+    text-align: center;
+    width: 80%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#footer {
+    display: flex;
+    color: #3a4046;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+
+#botaoVer {
+    padding: 7px;
+    font-weight: bold;
+}
+
+#conteiner-figuras {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.figura-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
