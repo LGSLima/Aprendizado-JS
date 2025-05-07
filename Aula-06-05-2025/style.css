@@ -9,28 +9,30 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #3a4046;
-    color: #f8f9fa;
 }
 
 header {
-    background-color: #3a4046;
+    background-image: linear-gradient(to right, rgb(158, 76, 212), rgb(94, 94, 226));
+}
+
+footer {
+    background-image: linear-gradient(to right, rgb(158, 76, 212), rgb(94, 94, 226));
 }
 
 .container-figuras {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 60%;
+    width: 50%;
 }
 
 .figura:hover {
-    background-color: #dbdbdb;
+    background-color: #f0f0f0;
     cursor: pointer;
     transform: scale(1.05);
-    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    transition: all 0.4s ease-in-out;
 }
 
 .modal-header {
-    background-color: #3a4046;
+    background-image: linear-gradient(to right, rgb(158, 76, 212), rgb(94, 94, 226));
     color: #f8f9fa;
 }
 

@@ -13,46 +13,45 @@
         <!-- CSS Integrado -->
         <link rel="stylesheet" href="style.css">
     </head>
-    <body class="d-flex flex-column">
+    <body class="d-flex flex-column bg-light">
         <!-- Título da Página -->
-        <header class="container-fluid text-light d-flex justify-content-center align-items-center py-2">
+        <header class="container-fluid text-light d-flex flex-column justify-content-center align-items-center py-4">
             <h1 class="mt-3">Área das Figuras</h1>
+            <p>Selecione a figura que deseja calcular a sua área.</p>
         </header>
 
         <!-- Área de Seleção de Figuras -->
         <main class="container-fluid d-flex justify-content-center align-items-center flex-column my-5">
-            <div class="container bg-light text-dark text-center rounded-3 shadow container-figuras pb-3">
-                <h4 class="my-4">Clique na figura para calcular a sua Área</h4>
-
-                <div class="container-md row">
-                    <div class="col-lg-4 col-md-6 col-sm-6 mb-3 figura">
-                        <img src="circulo.png" class="img-fluid" id="circulo" onclick="abrirModal('círculo')">
-                        <h4 onclick="abrirModal('círculo')">Círculo</h4>
+            <div class="container bg-light text-dark text-center rounded-3 shadow container-figuras pt-4 d-flex justify-content-center">
+                <div class="container row">
+                    <div class="col-lg-4 col-md-6 col-sm-6 mb-3 figura" onclick="abrirModal('círculo')">
+                        <img src="circulo.png" class="img-fluid" id="circulo">
+                        <h4>Círculo</h4>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col-sm-6 mb-3 figura">
-                        <img src="triangulo.png" class="img-fluid" id="triangulo" onclick="abrirModal('triângulo')">
-                        <h4 onclick="abrirModal('triângulo')">Triângulo</h4>
+                    <div class="col-lg-4 col-md-6 col-sm-6 mb-3 figura" onclick="abrirModal('triângulo')">
+                        <img src="triangulo.png" class="img-fluid" id="triangulo">
+                        <h4>Triângulo</h4>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col-sm-6 mb-3 figura">
-                        <img src="retangulo.png" class="img-fluid" id="retangulo" onclick="abrirModal('retângulo')">
-                        <h4 onclick="abrirModal('retângulo')">Retângulo</h4>
+                    <div class="col-lg-4 col-md-6 col-sm-6 mb-3 figura" onclick="abrirModal('retângulo')">
+                        <img src="retangulo.png" class="img-fluid" id="retangulo">
+                        <h4>Retângulo</h4>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col-sm-6 mb-3 figura">
-                        <img src="quadrado.png" class="img-fluid" id="quadrado" onclick="abrirModal('quadrado')">
-                        <h4 onclick="abrirModal('quadrado')">Quadrado</h4>
+                    <div class="col-lg-4 col-md-6 col-sm-6 mb-3 figura" onclick="abrirModal('quadrado')">
+                        <img src="quadrado.png" class="img-fluid" id="quadrado">
+                        <h4>Quadrado</h4>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col-sm-6 mb-3 figura">
-                        <img src="trapezio.png" class="img-fluid" id="trapezio" onclick="abrirModal('trapézio')">
-                        <h4 onclick="abrirModal('trapézio')">Trapézio</h4>
+                    <div class="col-lg-4 col-md-6 col-sm-6 mb-3 figura" onclick="abrirModal('trapézio')">
+                        <img src="trapezio.png" class="img-fluid" id="trapezio">
+                        <h4>Trapézio</h4>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col-sm-6 mb-3 figura">
-                        <img src="losango.png" class="img-fluid" id="losango" onclick="abrirModal('losango')">
-                        <h4 onclick="abrirModal('losango')">Losango</h4>
+                    <div class="col-lg-4 col-md-6 col-sm-6 mb-3 figura" onclick="abrirModal('losango')">
+                        <img src="losango.png" class="img-fluid" id="losango" >
+                        <h4>Losango</h4>
                     </div>
                 </div>
             </div>
@@ -60,7 +59,7 @@
 
         <!-- Modal para o cálculo-->
         <div class="modal fade" id="modalArea" tabindex="-1" aria-labelledby="modalAreaLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="modalheader">Cálculo da Área</h5>
@@ -72,14 +71,14 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Fechar</button>
                         <button class="btn btn-success" type="button" id="calcular" onclick="calcularArea()">Calcular</button>
+                        <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Fechar</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <footer class="bg-light text-dark text-center py-2 mt-auto">
+        <footer class="bg-light text-light text-center py-2 mt-auto">
             <span><b>&copy;</b> Luís Lima - 2025</span>
         </footer>
 
