@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;   
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Noto Sans Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 450;
+    font-variation-settings: "wdth" 100;
+}
+
+header{
+    background-color: #4CAF50;
+}
+
+.container-calculo {
+    text-align: justify;
+}
+
+/* Estilos gerais */
+.container-calculo {
+    max-width: 600px;
+    width: 70%;
+}
+
+
+@media (min-width: 1200px) {
+    .container-calculo {
+        width: 50%;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .container-calculo {
+        width: 75%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container-calculo {
+        width: 90%;
+        padding: 15px;
+    }
+    .input-group {
+        flex-direction: column;
+    }
+    .input-group-text {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-calculo {
+        width: 100%;
+        box-shadow: none;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
