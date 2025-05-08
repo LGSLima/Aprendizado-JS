@@ -36,6 +36,17 @@ header{
 
 
 @media (max-width: 992px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    header {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
     .container-calculo {
         width: 75%;
     }
@@ -43,16 +54,20 @@ header{
 
 
 @media (max-width: 768px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    header {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
     .container-calculo {
         width: 90%;
         padding: 15px;
-    }
-    .input-group {
-        flex-direction: column;
-    }
-    .input-group-text {
-        width: 100%;
-        text-align: center;
     }
 }
 
