@@ -1,56 +1,304 @@
-const precos = {
-    'X-Bacon': 15.90,
-    'X-Salada': 16.90,
-    'X-Tudo': 17.90,
-    'X-Completo': 24.90,
-    'X-BaconA': 22.90,
-    'X-SaladaA': 20.90,
-    'X-TudoA': 25.90,
-    'X-CompletoA': 28.90,
-    'Filé Bacon': 17.90,
-    'Filé Salada': 19.90,
-    'Filé Tudo': 20.90,
-    'Filé Completo': 28.90,
-    'Frango Bacon': 15.90,
-    'Frango Salada': 16.90,
-    'Frango Tudo': 17.90,
-    'Frango Completo': 24.90,
-    'Lombo Bacon': 15.90,
-    'Lombo Salada': 16.90,
-    'Lombo Tudo': 17.90,
-    'Lombo Completo': 24.90,
-    'Batata Frita Pequena': 8.90,
-    'Batata Frita Grande': 12.90,
-    'Refrigerante Litro': 7.90,
-    'Refrigerante Lata': 3.90,
-    'Cerveja Lata': 6.90,
-    'Molho de Alho': 1.90,
-    'Molho da Casa': 1.90
-};
+const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+const appendAlert = (message, type) => {
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML = [
+    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+    `   <div>${message}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    '</div>'
+  ].join('')
 
-let pedido = {};
+  alertPlaceholder.append(wrapper)
+}
 
-function adicionarProduto(nomeProduto, botao) {
-    const cardBody = botao.closest('.card-body');
-    const input = cardBody.querySelector('.quantidade');
-    const quantidade = parseInt(input.value);
+const alertTrigger = document.getElementById('liveAlertBtn')
+if (alertTrigger) {
+  alertTrigger.addEventListener('click', () => {
+    appendAlert('Nice, you triggered this alert message!', 'success')
+  })
+}
 
-    if (isNaN(quantidade) || quantidade <= 0) {
-        alert('Quantidade inválida. Por favor, insira um número maior que zero.');
-        input.value = '';
+var valorTotal = 0;
+var valorFinal = 0;
+
+function adicionarProduto(nomeProduto) {
+    let quantidadeProduto = parseInt(document.getElementById('qtd-' + nomeProduto.toLowerCase().replace(/ /g, '-')).value);
+    let valorProduto = 0;
+
+    if (isNaN(quantidadeProduto) || quantidadeProduto <= 0) {
+        var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+        myModal.show();
         return;
     }
 
-    carrinho[nomeProduto] = (carrinho[nomeProduto] || 0) + quantidade;
-    
-    let total = Object.entries(carrinho).reduce((acc, [produto, qtd]) => {
-        return acc + (precos[produto] * qtd);
-    }, 0);
+    switch (nomeProduto) {
+        case 'X-Bacon':
+            valorProduto = 15.90;
+            break;
 
-    document.getElementById('valorTotal').innerText = `R$ ${total.toFixed(2)}`;
-    input.value = '';
+        case 'X-Salada':
+            valorProduto = 16.90;
+            break;
+        
+        case 'X-Tudo':
+            valorProduto = 17.90;
+            break;
 
-    if(total > 0) {
-        alert(`Produto ${nomeProduto} adicionado ao carrinho!`);
+        case 'X-Completo':
+            valorProduto = 24.90;
+            break;
+
+        case 'X-Bacon A':
+            valorProduto = 22.90;
+            break;
+
+        case 'X-Salada A':
+            valorProduto = 20.90;
+            break;
+
+        case 'X-Tudo A':
+            valorProduto = 25.90;
+            break;
+
+        case 'X-Completo A':
+            valorProduto = 28.90;
+            break;
+        
+        case 'File Bacon':
+            valorProduto = 17.90;
+            break;
+
+        case 'File Salada':
+            valorProduto = 19.90;
+            break;
+
+        case 'File Tudo':
+            valorProduto = 20.90;
+            break;
+
+        case 'File Completo':
+            valorProduto = 28.90;
+            break;
+
+        case 'Frango Bacon':
+            valorProduto = 15.90;
+            break;
+
+        case 'Frango Salada':
+            valorProduto = 16.90;
+            break;
+
+        case 'Frango Tudo':
+            valorProduto = 17.90;
+            break;
+
+        case 'Frango Completo':
+            valorProduto = 24.90;
+            break;
+
+        case 'Lombo Bacon':
+            valorProduto = 15.90;
+            break;
+
+        case 'Lombo Salada':
+            valorProduto = 16.90;
+            break;
+
+        case 'Lombo Tudo':
+            valorProduto = 17.90;
+            break;
+
+        case 'Lombo Completo':
+            valorProduto = 24.90;
+            break;
+        
+        case 'Batata Pequena':
+            valorProduto = 8.90;
+            break;
+
+        case 'Batata Grande':
+            valorProduto = 12.90;
+            break;
+
+        case 'Refri Litro':
+            valorProduto = 7.90;
+            break;
+
+        case 'Refri Lata':
+            valorProduto = 3.90;
+            break;
+
+        case 'Cerveja Lata':
+            valorProduto = 6.90;
+            break;
+
+        case 'Molho Alho':
+            valorProduto = 1.90;
+            break;
+
+        case 'Molho Casa':
+            valorProduto = 1.90;
+            break;
+        
+        default:
+            alert('Produto não encontrado');
+            return;
     }
+
+    valorTotal = valorProduto * quantidadeProduto;
+    valorFinal += valorTotal;
+    document.getElementById('valorTotal').textContent = 'R$ ' + valorFinal.toFixed(2);
+}
+
+function finalizarPedido() {
+    let valorPedido = document.getElementById('valorTotal').textContent;
+
+    if (valorPedido == '-' || valorPedido == 'R$ 0.00') {
+        alert('Adicione produtos ao pedido antes de finalizar.');
+        return;
+    } else {
+        alert('Pedido finalizado com sucesso! Valor total: ' + valorPedido);
+        document.getElementById('valorTotal').textContent = '-';
+        valorFinal = 0;
+        document.querySelectorAll('input[type="number"]').forEach(input => input.value = '');
+    }
+}
+
+function resetarPedido() {
+    let valorPedido = document.getElementById('valorTotal').textContent;
+
+    if (valorPedido != '-' || valorPedido != 'R$ 0.00') {
+        document.getElementById('valorTotal').textContent = '-';
+        valorFinal = 0;
+        alert('Pedido resetado com sucesso!');
+        document.querySelectorAll('input[type="number"]').forEach(input => input.value = '');
+    }
+}
+
+function removerProduto(nomeProduto) {
+    let quantidadeProduto = parseInt(document.getElementById('qtd-' + nomeProduto.toLowerCase().replace(/ /g, '-')).value);
+    let valorProduto = 0;
+
+    if (isNaN(quantidadeProduto) || quantidadeProduto <= 0) {
+        alert('Quantidade inválida');
+        return;
+    }
+
+    switch (nomeProduto) {
+        case 'X-Bacon':
+            valorProduto = 15.90;
+            break;
+
+        case 'X-Salada':
+            valorProduto = 16.90;
+            break;
+        
+        case 'X-Tudo':
+            valorProduto = 17.90;
+            break;
+
+        case 'X-Completo':
+            valorProduto = 24.90;
+            break;
+
+        case 'X-Bacon A':
+            valorProduto = 22.90;
+            break;
+
+        case 'X-Salada A':
+            valorProduto = 20.90;
+            break;
+
+        case 'X-Tudo A':
+            valorProduto = 25.90;
+            break;
+
+        case 'X-Completo A':
+            valorProduto = 28.90;
+            break;
+        
+        case 'File Bacon':
+            valorProduto = 17.90;
+            break;
+
+        case 'File Salada':
+            valorProduto = 19.90;
+            break;
+
+        case 'File Tudo':
+            valorProduto = 20.90;
+            break;
+
+        case 'File Completo':
+            valorProduto = 28.90;
+            break;
+
+        case 'Frango Bacon':
+            valorProduto = 15.90;
+            break;
+
+        case 'Frango Salada':
+            valorProduto = 16.90;
+            break;
+
+        case 'Frango Tudo':
+            valorProduto = 17.90;
+            break;
+
+        case 'Frango Completo':
+            valorProduto = 24.90;
+            break;
+
+        case 'Lombo Bacon':
+            valorProduto = 15.90;
+            break;
+
+        case 'Lombo Salada':
+            valorProduto = 16.90;
+            break;
+
+        case 'Lombo Tudo':
+            valorProduto = 17.90;
+            break;
+
+        case 'Lombo Completo':
+            valorProduto = 24.90;
+            break;
+        
+        case 'Batata Pequena':
+            valorProduto = 8.90;
+            break;
+
+        case 'Batata Grande':
+            valorProduto = 12.90;
+            break;
+
+        case 'Refri Litro':
+            valorProduto = 7.90;
+            break;
+
+        case 'Refri Lata':
+            valorProduto = 3.90;
+            break;
+
+        case 'Cerveja Lata':
+            valorProduto = 6.90;
+            break;
+
+        case 'Molho Alho':
+            valorProduto = 1.90;
+            break;
+
+        case 'Molho Casa':
+            valorProduto = 1.90;
+            break;
+        
+        default:
+            alert('Produto não encontrado');
+            return;
+    }
+
+    valorTotal = valorProduto * quantidadeProduto;
+    valorFinal -= valorTotal;
+    document.getElementById('valorTotal').textContent = 'R$ ' + valorFinal.toFixed(2);
 }
