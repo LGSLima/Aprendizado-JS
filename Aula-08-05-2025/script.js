@@ -1,6 +1,7 @@
 // Variáveis globais para armazenar o valor total e final do pedido
 var valorTotal = 0;
 var valorFinal = 0;
+var produtoExistente = [];
 
 // Função para adicionar produto ao pedido
 function adicionarProduto(nomeProduto) {
@@ -101,10 +102,13 @@ function adicionarProduto(nomeProduto) {
             alert('Produto não encontrado');
             return;
     }
+    // Adiciona o produto como existente
+    produtoExistente += 'qtd-' + nomeProduto.toLowerCase().replace(/ /g, '-');
 
     // Calcula o valor total do produto e soma ao valor final
     valorTotal = valorProduto * quantidadeProduto;
     valorFinal += valorTotal;
+    
     // Atualiza o valor total na tela
     document.getElementById('valorTotal').textContent = 'R$ ' + valorFinal.toFixed(2);
 }
@@ -209,9 +213,18 @@ function removerProduto(nomeProduto) {
             return;
     }
 
-    // Calcula o valor total do produto e subtrai do valor final
-    valorTotal = valorProduto * quantidadeProduto;
-    valorFinal -= valorTotal;
+    // Verifica se o produto existe no pedido
+    if (produtoExistente.indexOf('qtd-' + nomeProduto.toLowerCase().replace(/ /g, '-')) === -1) {
+        modal('produto-inexistente');
+        return;
+    } else {
+        // Calcula o valor total do produto e subtrai do valor final
+        valorTotal = valorProduto * quantidadeProduto;
+        valorFinal -= valorTotal;
+
+        // Remove o produto do pedido
+        produtoExistente = produtoExistente.replace('qtd-' + nomeProduto.toLowerCase().replace(/ /g, '-'), '');
+    }
 
     // Verifica se o valor final é menor que zero
     // Se for, define como zero
@@ -229,13 +242,13 @@ function finalizarPedido() {
     let valorPedido = document.getElementById('valorTotal').textContent;
 
     // Verifica se há produtos no pedido
-    if (valorPedido == 'R$ 0.00' || isNaN(valorPedido)) {
+    if (valorPedido == 'R$ 0.00') {
         modal('finalizar-erro');
         return;
     } else {
         // Exibe modal de sucesso e reseta valores
         modal('finalizar');
-        document.getElementById('valorTotal').textContent = '-';
+        document.getElementById('valorTotal').textContent = 'R$ 0.00';
         valorFinal = 0;
         // Limpa todos os campos de quantidade
         document.querySelectorAll('input[type="number"]').forEach(input => input.value = '');
@@ -309,6 +322,16 @@ function modal(tipo) {
                 </div>
                 <div class="modal-body">
                     <p>Não é possível resetar o pedido, pois nenhum produto foi adicionado ao carrinho.</p>
+                </div>
+            `
+        case 'produto-inexistente':
+            modalContent = `
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">Erro!</h5>
+                    <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Fechar modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>O produto não existe no carrinho.</p>
                 </div>
             `
             break;
