@@ -103,14 +103,14 @@ function adicionarProduto(nomeProduto) {
             return;
     }
     // Adiciona o produto como existente
-    produtoExistente += 'qtd-' + nomeProduto.toLowerCase().replace(/ /g, '-');
+    produtoExistente.push('qtd-' + nomeProduto.toLowerCase().replace(/ /g, '-'));
 
     // Calcula o valor total do produto e soma ao valor final
     valorTotal = valorProduto * quantidadeProduto;
     valorFinal += valorTotal;
     
     // Atualiza o valor total na tela
-    document.getElementById('valorTotal').textContent = 'R$ ' + valorFinal.toFixed(2);
+    document.getElementById('valorTotal').textContent = valorFinal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
 }
 
 // Função para remover produto do pedido
@@ -223,7 +223,7 @@ function removerProduto(nomeProduto) {
         valorFinal -= valorTotal;
 
         // Remove o produto do pedido
-        produtoExistente = produtoExistente.replace('qtd-' + nomeProduto.toLowerCase().replace(/ /g, '-'), '');
+        produtoExistente = produtoExistente.filter(item => item !== 'qtd-' + nomeProduto.toLowerCase().replace(/ /g, '-'));
     }
 
     // Verifica se o valor final é menor que zero
@@ -233,7 +233,7 @@ function removerProduto(nomeProduto) {
     }
 
     // Atualiza o valor total na tela
-    document.getElementById('valorTotal').textContent = 'R$ ' + valorFinal.toFixed(2);
+    document.getElementById('valorTotal').textContent = valorFinal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
 }
 
 // Função para finalizar o pedido
@@ -253,6 +253,9 @@ function finalizarPedido() {
         // Limpa todos os campos de quantidade
         document.querySelectorAll('input[type="number"]').forEach(input => input.value = '');
     }
+
+    // Limpa o array
+    produtoExistente = [];
 }
 
 // Função para resetar o pedido
@@ -272,6 +275,9 @@ function resetarPedido() {
         valorFinal = 0;
         document.querySelectorAll('input[type="number"]').forEach(input => input.value = '');
     } 
+
+    // Limpa o array
+    produtoExistente = [];
 }
 
 // Função para exibir modais de alerta e mensagens
@@ -324,6 +330,7 @@ function modal(tipo) {
                     <p>Não é possível resetar o pedido, pois nenhum produto foi adicionado ao carrinho.</p>
                 </div>
             `
+            break;
         case 'produto-inexistente':
             modalContent = `
                 <div class="modal-header bg-danger text-white">
