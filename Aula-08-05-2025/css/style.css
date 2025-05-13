@@ -17,6 +17,10 @@ aside {
     max-height: 0rem; /* Limita a altura máxima do aside a 0 (esconde o conteúdo) */
 }
 
+.pedidoCollapse {
+    cursor: pointer; /* Muda o cursor para o utilizado em links */
+}
+
 .card {
     font-size: 0.9rem; /* Define o tamanho da fonte dos cards */
 }

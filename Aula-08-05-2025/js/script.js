@@ -102,6 +102,7 @@ function adicionarProduto(nomeProduto) {
             alert('Produto não encontrado');
             return;
     }
+    
     // Adiciona o produto como existente
     produtoExistente.push('qtd-' + nomeProduto.toLowerCase().replace(/ /g, '-'));
 
