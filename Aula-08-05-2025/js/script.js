@@ -1,15 +1,22 @@
+var quantidadeProduto = 0;
 var valorFinal = 0;
 var valorDesconto = 0;
 var valorAPagar = 0;
+var produtosSelecionados = {}; // Armazena as quantidades de cada produto
 
 // Função para adicionar produto ao pedido
 function adicionarProduto(nomeProduto) {
     // Obtém a quantidade do produto a partir do input
-    let quantidadeProduto = parseInt(document.getElementById('qtd-' + nomeProduto.toLowerCase().replace(/ /g, '-')).value);   
+    quantidadeProduto = parseInt(document.getElementById('qtd-' + nomeProduto.toLowerCase().replace(/ /g, '-')).value);   
     let valorProduto = 0;
 
+    // Dá valor 0 caso o valor seja NaN
+    if(isNaN(quantidadeProduto)) {
+        quantidadeProduto = 0;
+    }
+
     // Verifica se a quantidade é válida
-    if (isNaN(quantidadeProduto) || quantidadeProduto < 0) {
+    if (quantidadeProduto < 0) {
         modal('erro');
         return;
     }
@@ -99,17 +106,29 @@ function adicionarProduto(nomeProduto) {
             break;
         default:
             alert('Produto não encontrado');
-            return;
+            break;
     }
 
-    // Calcula o valor total do produto e soma ao valor final
-    valorFinal = valorProduto * quantidadeProduto;
+    // Atualiza a quantidade do produto selecionado
+    produtosSelecionados[nomeProduto] = { quantidade: quantidadeProduto, valor: valorProduto};
 
-    if(document.getElementById('plus').checked) {
-        valorFinal = (valorProduto * quantidadeProduto) + (quantidadeProduto * 5);
+    // Recalcula o valorFinal somando todos os produtos
+    valorFinal = 0;
+    for (let produto in produtosSelecionados) {
+        let item = produtosSelecionados[produto];
+        valorFinal += (item.valor * item.quantidade);
     }
-    
+
     // Atualiza o valor total na tela
+    document.getElementById('valorTotal').textContent = valorFinal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+}
+
+function adicional(nomeProduto) {
+    quantidadeProduto = parseInt(document.getElementById('qtd-' + nomeProduto.toLowerCase().replace(/ /g, '-')).value);
+    const plus = 5;
+    
+    valorFinal += quantidadeProduto * plus;
+
     document.getElementById('valorTotal').textContent = valorFinal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
 }
 
@@ -150,22 +169,19 @@ function finalizarPedido() {
     let valorPedido = document.getElementById('valorTotal').textContent;
 
     // Verifica se há produtos no pedido
-    if (valorPedido == 'R$ 0,00' || document.getElementById('valorAPagar').textContent === 'R$ 0,00' && document.getElementById('valorDesconto').textContent === 'R$ 0,00' || document.getElementById('valorAPagar').textContent == "R$ 7,00") {
+    if (
+        valorPedido == 'R$ 0,00' ||
+        (document.getElementById('valorAPagar').textContent === 'R$ 0,00' &&
+         document.getElementById('valorDesconto').textContent === 'R$ 0,00') ||
+        (document.getElementById('valorAPagar').textContent == "R$ 7,00" &&
+         document.getElementById('valorDesconto').textContent === 'R$ 0,00')
+    ) {
         modal('finalizar-erro');
-        return;
     } else {
         // Exibe modal de sucesso e reseta valores
         modal('finalizar');
-        document.getElementById('valorTotal').textContent = 'R$ 0.00';
-        valorFinal = 0;
-        // Limpa todos os campos de quantidade
-        document.querySelectorAll('input[type="number"]').forEach(input => input.value = '');
-        document.getElementById('valorDesconto').textContent = 'R$ 0,00';
-        document.getElementById('valorAPagar').textContent = 'R$ 0,00';
+        resetarPedido();
     }
-
-    // Limpa o array
-    produtoExistente = [];
 }
 
 // Função para resetar o pedido
@@ -194,6 +210,7 @@ function modal(tipo) {
                     <p>O valor é inválido.</p>
                 </div>
             `
+            break;
         case 'finalizar-erro':
             modalContent = `
                 <div class="modal-header bg-danger text-white">
@@ -230,9 +247,7 @@ function modal(tipo) {
             break;
         default:
             alert('Tipo de modal inválido');
-            return;
-
-        descontoValPagar();
+            break;
     }
 
     // Insere o conteúdo no modal e exibe
@@ -240,5 +255,4 @@ function modal(tipo) {
     
     const modal = new bootstrap.Modal(document.getElementById('modalAlerta'));
     modal.show();
-    return;
 }
