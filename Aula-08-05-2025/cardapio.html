@@ -71,10 +71,12 @@
                                     <h5>R$ 15,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-xbacon">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-x-bacon" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('X-Bacon')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('X-Bacon')">-</button>
+                                        <label class="input-group-text" for="qtd-xbacon">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-x-bacon" min="0" oninput="adicionarProduto('X-Bacon')">
+                                        <label class="input-group-text">Plus</label>
+                                        <div class="input-group-text">
+                                            <input type="radio" class="form-check-input" name="recebimento" id="plus">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -90,10 +92,12 @@
                                     <h5>R$ 16,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-xsalada">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-x-salada" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('X-Salada')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('X-Salada')">-</button>
+                                        <label class="input-group-text" for="qtd-xsalada">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-x-salada" min="0" oninput="adicionarProduto('X-Salada')">
+                                        <label class="input-group-text">Plus</label>
+                                        <div class="input-group-text">
+                                            <input type="radio" class="form-check-input" name="recebimento" id="plus">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -109,10 +113,8 @@
                                     <h5>R$ 17,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-xtudo">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-x-tudo" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('X-Tudo')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('X-Tudo')">-</button>
+                                        <label class="input-group-text" for="qtd-xtudo">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-x-tudo" min="0" oninput="adicionarProduto('X-Tudo')">
                                     </div>
                                 </div>
                             </div>
@@ -128,10 +130,8 @@
                                     <h5>R$ 24,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-xcompleto">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-x-completo" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('X-Completo')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('X-Completo')">-</button>
+                                        <label class="input-group-text" for="qtd-xcompleto">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-x-completo" min="0" oninput="adicionarProduto('X-Completo')">
                                     </div>
                                 </div>
                             </div>
@@ -153,10 +153,12 @@
                                     <h5>R$ 22,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-xbacon-a">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-x-bacon-a" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('X-Bacon A')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('X-Bacon A')">-</button>
+                                        <label class="input-group-text" for="qtd-xbacon-a">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-x-bacon-a" min="0" oninput="adicionarProduto()">
+                                        <label class="input-group-text">Plus</label>
+                                        <div class="input-group-text">
+                                            <input type="radio" class="form-check-input" name="recebimento" id="plus">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -172,10 +174,12 @@
                                     <h5>R$ 20,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-xsalada-a">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-xsalada-a" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('X-Salada A')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('X-Salada A')">-</button>
+                                        <label class="input-group-text" for="qtd-xsalada-a">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-x-salada-a" min="0" oninput="adicionarProduto('X-Salada A')">
+                                        <label class="input-group-text">Plus</label>
+                                        <div class="input-group-text">
+                                            <input type="radio" class="form-check-input" name="recebimento" id="plus">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -191,10 +195,8 @@
                                     <h5>R$ 25,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-xtudo-a">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-xtudo-a" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('X-Tudo A')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('X-Tudo A')">-</button>
+                                        <label class="input-group-text" for="qtd-xtudo-a">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-x-tudo-a" min="0" oninput="adicionarProduto('X-Tudo A')">
                                     </div>
                                 </div>
                             </div>
@@ -210,10 +212,12 @@
                                     <h5>R$ 28,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-xcompleto-a">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-x-completo-a" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('X-Completo A')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('X-Completo A')">-</button>
+                                        <label class="input-group-text" for="qtd-xcompleto-a">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-x-completo-a" min="0" oninput="adicionarProduto('X-Completo A')">
+                                        <label class="input-group-text">Plus</label>
+                                        <div class="input-group-text">
+                                            <input type="radio" class="form-check-input" name="recebimento" id="plus">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -235,10 +239,12 @@
                                     <h5>R$ 17,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-file-bacon">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-file-bacon" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('File Bacon')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('File Bacon')">-</button>
+                                        <label class="input-group-text" for="qtd-file-bacon">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-file-bacon" min="0" oninput="adicionarProduto('File Bacon')">
+                                        <label class="input-group-text">Plus</label>
+                                        <div class="input-group-text">
+                                            <input type="radio" class="form-check-input" name="recebimento" id="plus">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -254,11 +260,8 @@
                                     <h5>R$ 19,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-file-salada">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-file-salada" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('File Salada')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('File Salada')">-</button>
-                                    </div>
+                                        <label class="input-group-text" for="qtd-file-salada">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-file-salada" min="0" oninput="adicionarProduto('File Salada')">
                                 </div>
                             </div>
                         </div>
@@ -273,11 +276,8 @@
                                     <h5>R$ 20,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-file-tudo">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-file-tudo" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('File Tudo')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('File Tudo')">-</button>
-                                    </div>
+                                        <label class="input-group-text" for="qtd-file-tudo">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-file-tudo" min="0" oninput="adicionarProduto('File Tudo')">
                                 </div>
                             </div>
                         </div>
@@ -292,11 +292,8 @@
                                     <h5>R$ 28,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-file-completo">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-file-completo" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('File Completo')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('File Completo')">-</button>
-                                    </div>
+                                        <label class="input-group-text" for="qtd-file-completo">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-file-completo" min="0" oninput="adicionarProduto('File Completo')">
                                 </div>
                             </div>
                         </div>
@@ -317,10 +314,12 @@
                                     <h5>R$ 15,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-frango-bacon">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-frango-bacon" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('Frango Bacon')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('Frango Bacon')">-</button>
+                                        <label class="input-group-text" for="qtd-frango-bacon">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-frango-bacon" min="0" oninput="adicionarProduto('Frango Bacon')">
+                                        <label class="input-group-text">Plus</label>
+                                        <div class="input-group-text">
+                                            <input type="radio" class="form-check-input" name="recebimento" id="plus">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -336,11 +335,8 @@
                                     <h5>R$ 16,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-frango-salada">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-frango-salada" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('Frango Salada')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('Frango Salada')">-</button>
-                                    </div>
+                                        <label class="input-group-text" for="qtd-frango-salada">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-frango-salada" min="0" oninput="adicionarProduto('Frango Salada')">
                                 </div>
                             </div>
                         </div>
@@ -355,11 +351,8 @@
                                     <h5>R$ 17,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-frango-tudo">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-frango-tudo" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('Frango Tudo')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('Frango Tudo')">-</button>
-                                    </div>
+                                        <label class="input-group-text" for="qtd-frango-tudo">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-frango-tudo" min="0" oninput="adicionarProduto('Frango Tudo')">
                                 </div>
                             </div>
                         </div>
@@ -374,10 +367,8 @@
                                     <h5>R$ 24,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-frango-completo">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-frango-completo" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('Frango Completo')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('Frango Completo')">-</button>
+                                        <label class="input-group-text" for="qtd-frango-completo">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-frango-completo" min="0" oninput="adicionarProduto('Frango Completo')">
                                     </div>
                                 </div>
                             </div>
@@ -399,10 +390,12 @@
                                     <h5>R$ 15,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-lombo-bacon">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-lombo-bacon" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('Lombo Bacon')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('Lombo Bacon')">-</button>
+                                        <label class="input-group-text" for="qtd-lombo-bacon">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-lombo-bacon" min="0" oninput="adicionarProduto('Lombo Bacon')">
+                                        <label class="input-group-text">Plus</label>
+                                        <div class="input-group-text">
+                                            <input type="radio" class="form-check-input" name="recebimento" id="plus">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -418,10 +411,8 @@
                                     <h5>R$ 16,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-lombo-salada">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-lombo-salada" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('Lombo Salada')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('Lombo Salada')">-</button>
+                                        <label class="input-group-text" for="qtd-lombo-salada">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-lombo-salada" min="0" oninput="adicionarProduto('Lombo Salada')">
                                     </div>
                                 </div>
                             </div>
@@ -437,10 +428,8 @@
                                     <h5>R$ 17,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-lombo-tudo">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-lombo-tudo" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('Lombo Tudo')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('Lombo Tudo')">-</button>
+                                        <label class="input-group-text" for="qtd-lombo-tudo">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-lombo-tudo" min="0" oninput="adicionarProduto('Lombo Tudo')">
                                     </div>
                                 </div>
                             </div>
@@ -456,10 +445,8 @@
                                     <h5>R$ 24,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-lombo-completo">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-lombo-completo" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('Lombo Completo')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('Lombo Completo')">-</button>
+                                        <label class="input-group-text" for="qtd-lombo-completo">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-lombo-completo" min="0" oninput="adicionarProduto('Lombo Completo')">
                                     </div>
                                 </div>
                             </div>
@@ -480,10 +467,8 @@
                                     <h5 class="flex-grow-1">R$ 8,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-batata-pequena">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-batata-pequena" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('Batata Pequena')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('Batata Pequena')">-</button>
+                                        <label class="input-group-text" for="qtd-batata-pequena">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-batata-pequena" min="0" oninput="adicionarProduto('Batata Pequena')">
                                     </div>
                                 </div>
                             </div>
@@ -498,10 +483,8 @@
                                     <h5>R$ 12,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-batata-grande">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-batata-grande" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('Batata Grande')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('Batata Grande')">-</button>
+                                        <label class="input-group-text" for="qtd-batata-grande">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-batata-grande" min="0" oninput="adicionarProduto('Batata Grande')">
                                     </div>
                                 </div>
                             </div>
@@ -516,10 +499,8 @@
                                     <h5>R$ 7,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-refri-litro">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-refri-litro" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('Refri Litro')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('Refri Litro')">-</button>
+                                        <label class="input-group-text" for="qtd-refri-litro">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-refri-litro" min="0" oninput="adicionarProduto('Refri Litro')">
                                     </div>
                                 </div>
                             </div>
@@ -534,10 +515,8 @@
                                     <h5>R$ 3,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-refri-lata">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-refri-lata" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('Refri Lata')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('Refri Lata')">-</button>
+                                        <label class="input-group-text" for="qtd-refri-lata">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-refri-lata" min="0" oninput="adicionarProduto('Refri Lata')">
                                     </div>
                                 </div>
                             </div>
@@ -552,10 +531,8 @@
                                     <h5>R$ 6,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-cerveja-lata">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-cerveja-lata" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('Cerveja Lata')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('Cerveja Lata')">-</button>
+                                        <label class="input-group-text" for="qtd-cerveja-lata">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-cerveja-lata" min="0" oninput="adicionarProduto('Cerveja Lata')">
                                     </div>
                                 </div>
                             </div>
@@ -570,10 +547,8 @@
                                     <h5>R$ 1,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-molho-alho">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-molho-alho" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('Molho Alho')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('Molho Alho')">-</button>
+                                        <label class="input-group-text" for="qtd-molho-alho">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-molho-alho" min="0" oninput="adicionarProduto('Molho Alho')">
                                     </div>
                                 </div>
                             </div>
@@ -588,10 +563,8 @@
                                     <h5>R$ 1,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-molho-casa">Qtd:</label>
-                                        <input type="number" class="form-control" id="qtd-molho-casa" min="0">
-                                        <button class="btn btn-warning fw-bold" aria-label="Adicionar Produto" onclick="adicionarProduto('Molho Casa')">+</button>
-                                        <button class="btn btn-danger fw-bold" aria-label="Remover Produto" onclick="removerProduto('Molho Casa')">-</button>
+                                        <label class="input-group-text" for="qtd-molho-casa">Quantidade:</label>
+                                        <input type="number" class="form-control" id="qtd-molho-casa" min="0" oninput="adicionarProduto('Molho Casa')">
                                     </div>
                                 </div>
                             </div>
@@ -606,18 +579,46 @@
                         </div>
                         <div class="collapse shadow rounded-bottom mt-3" id="pedido">
                             <div class="card card-body bg-light text-dark">
-                                <h4 class="text-center">Resumo do Pedido</h4>
-                                <hr>
-                                <div class="row g-3">
-                                    <div class="col-12">
-                                        <h5>Total:</h5>
-                                        <h4 id="valorTotal">R$ 0.00</h4>
-                                    </div>
+                                <h4 class="text-center mb-4">Resumo do Pedido</h4>
+                                    <p>
+                                        <span id="produtosLista"></span>
+                                    </p>
+
+                                    <h5>Total: <span id="valorTotal">R$ 0,00</span></h5>
+                                    <hr>
+                                    <form class="fw-bold mb-2">
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="form-check-input" name="pagamento" id="pgCredito" checked onclick="descontoValPagar()">
+                                            <label class="form-check-label" for="pagamento">Crédito</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="form-check-input" name="pagamento" id="pgDebito" onclick="descontoValPagar()">
+                                            <label class="form-check-label" for="pagamento">Débito</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="form-check-input" name="pagamento" id="pgDinPix" onclick="descontoValPagar()">
+                                            <label class="form-check-label" for="pagamento">Dinheiro/Pix</label>
+                                        </div>
+                                    </form>
+                                    <h5>Desconto: <span id="valorDesconto">R$ 0,00</span></h5>
+                                    <hr>
+                                    <form class="fw-bold mb-2">
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="form-check-input" name="recebimento" id="retirada" checked onclick="descontoValPagar()">
+                                            <label class="form-check-label" for="pagamento">Retirar na loja</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="form-check-input" name="recebimento" id="entrega" onclick="descontoValPagar()">
+                                            <label class="form-check-label" for="pagamento">Entrega (Taxa: R$ 7,00)</label>
+                                        </div>
+                                    </form>
+                                    <h5>Valor a pagar: <span id="valorAPagar">R$ 0,00</span></h5>
+                                    <br>
                                     <div class="col-12 text-center">
                                         <button class="btn btn-warning" onclick="finalizarPedido()">Finalizar Pedido</button>
                                         <button class="btn btn-danger" onclick="resetarPedido()">Resetar Pedido</button>
                                     </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </aside>
