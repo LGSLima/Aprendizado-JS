@@ -1,14 +1,14 @@
+var valorTemp = 0;
 var quantidadeProduto = 0;
-var valorFinal = 0;
-var valorDesconto = 0;
 var valorAPagar = 0;
-var produtosSelecionados = {}; // Armazena as quantidades de cada produto
+var produtosSelecionados = {};
 
 // Função para adicionar produto ao pedido
 function adicionarProduto(nomeProduto) {
     // Obtém a quantidade do produto a partir do input
     quantidadeProduto = parseInt(document.getElementById('qtd-' + nomeProduto.toLowerCase().replace(/ /g, '-')).value);   
-    let valorProduto = 0;
+    var valorProduto = 0;
+    var valorFinal = 0;
 
     // Dá valor 0 caso o valor seja NaN
     if(isNaN(quantidadeProduto)) {
@@ -113,38 +113,33 @@ function adicionarProduto(nomeProduto) {
     produtosSelecionados[nomeProduto] = { quantidade: quantidadeProduto, valor: valorProduto};
 
     // Recalcula o valorFinal somando todos os produtos
-    valorFinal = 0;
     for (let produto in produtosSelecionados) {
         let item = produtosSelecionados[produto];
-        valorFinal += (item.valor * item.quantidade);
+        valorFinal += (item.valor * item.quantidade);        
     }
+
+    valorTemp = valorFinal; // Dá valor para o cálculo de desconto e a pagar
+
+    descontoValPagar(); // Chama a função de desconto
 
     // Atualiza o valor total na tela
     document.getElementById('valorTotal').textContent = valorFinal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
 }
 
-function adicional(nomeProduto) {
-    quantidadeProduto = parseInt(document.getElementById('qtd-' + nomeProduto.toLowerCase().replace(/ /g, '-')).value);
-    const plus = 5;
-    
-    valorFinal += quantidadeProduto * plus;
-
-    document.getElementById('valorTotal').textContent = valorFinal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
-}
-
+// Função para o cálculo do desconto e do valor a apagar
 function descontoValPagar() {
-    let valorTemp = valorFinal;
+    var valorDesconto = 0;
     const frete = 7;
 
     if(document.getElementById('pgCredito').checked) {
         valorDesconto = valorTemp * 0.05;
-        valorAPagar = valorFinal - valorDesconto;
+        valorAPagar = valorTemp - valorDesconto;
     } else if (document.getElementById('pgDebito').checked) {
         valorDesconto = valorTemp * 0.1;
-        valorAPagar = valorFinal - valorDesconto;
+        valorAPagar = valorTemp - valorDesconto;
     } else if (document.getElementById('pgDinPix').checked) {
         valorDesconto = valorTemp * 0.15;
-        valorAPagar = valorFinal - valorDesconto;
+        valorAPagar = valorTemp - valorDesconto;
     } else {
         modal('erro');
         return;
@@ -160,7 +155,6 @@ function descontoValPagar() {
 
     document.getElementById('valorDesconto').textContent = `${valorDesconto.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`;
     document.getElementById('valorAPagar').textContent = `${valorAPagar.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`;
-
 }
 
 // Função para finalizar o pedido
