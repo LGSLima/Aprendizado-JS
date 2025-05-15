@@ -5,21 +5,27 @@ var produtosSelecionados = {};
 
 // Função para adicionar produto ao pedido
 function adicionarProduto(nomeProduto) {
-    // Obtém a quantidade do produto a partir do input
-    quantidadeProduto = parseInt(document.getElementById('qtd-' + nomeProduto.toLowerCase().replace(/ /g, '-')).value);   
-    var valorProduto = 0;
-    var valorFinal = 0;
+    // Obtém os elementos necessários
+    const inputId = 'qtd-' + nomeProduto.toLowerCase().replace(/ /g, '-');
+    const inputValor = document.getElementById(inputId);
+    const plusCheckbox = inputValor.closest('.card-body').querySelector('.plus');
 
-    // Dá valor 0 caso o valor seja NaN
-    if(isNaN(quantidadeProduto)) {
-        quantidadeProduto = 0;
-    }
+    // Obtém a quantidade do produto
+    quantidadeProduto = parseInt(inputValor.value);
 
     // Verifica se a quantidade é válida
-    if (quantidadeProduto < 0) {
+    if(quantidadeProduto < 0) {
         modal('erro');
+        inputValor.value = '';
         return;
     }
+
+    if(!inputValor) {
+        alert("Input não escontrado.")
+    }
+
+    var valorProduto = 0;
+    const plus = 5;
 
     // Define o valor do produto conforme o nome
     switch (nomeProduto) {
@@ -105,25 +111,53 @@ function adicionarProduto(nomeProduto) {
             valorProduto = 1.90;
             break;
         default:
-            alert('Produto não encontrado');
-            break;
+            return;
     }
 
+    let valorPlus = 0
+
+    // Calcula o valor do plus
+    if(plusCheckbox && plusCheckbox.checked) {
+        valorPlus = quantidadeProduto * plus;
+    }
+    
     // Atualiza a quantidade do produto selecionado
-    produtosSelecionados[nomeProduto] = { quantidade: quantidadeProduto, valor: valorProduto};
+    if(quantidadeProduto > 0) {
+        produtosSelecionados[nomeProduto] = {quantidade: quantidadeProduto, valor: valorProduto, plus: valorPlus};
+    } else {
+        delete produtosSelecionados[nomeProduto];
+    }
+
+    var valorFinal = 0;
 
     // Recalcula o valorFinal somando todos os produtos
-    for (let produto in produtosSelecionados) {
-        let item = produtosSelecionados[produto];
-        valorFinal += (item.valor * item.quantidade);        
+    for(let produto in produtosSelecionados) {
+        let item = produtosSelecionados[produto]
+        valorFinal += (item.quantidade * item.valor) + item.plus;
     }
 
-    valorTemp = valorFinal; // Dá valor para o cálculo de desconto e a pagar
-
-    descontoValPagar(); // Chama a função de desconto
+    valorTemp = valorFinal;
+    descontoValPagar();
+    listaProdutos();
 
     // Atualiza o valor total na tela
     document.getElementById('valorTotal').textContent = valorFinal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+}
+
+// Função para atualizar a lista de produtos no resumo
+function listaProdutos() {
+    const prod = document.getElementById('produtosLista');
+    let lista = '';
+    
+    for (let produto in produtosSelecionados) {
+        const item = produtosSelecionados[produto];
+        lista += `<div class="d-flex justify-content-between">
+            <span>${produto} x${item.quantidade} ${item.plus > 0 ? '(Plus)' : ''}</span>
+            <span>${((item.valor * item.quantidade) + item.plus).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</span>
+        </div>`;
+    }
+    
+    prod.innerHTML = lista || 'Nenhum produto selecionado';
 }
 
 // Função para o cálculo do desconto e do valor a apagar
@@ -180,11 +214,25 @@ function finalizarPedido() {
 
 // Função para resetar o pedido
 function resetarPedido() {
+    // Reseta as variáveis globais
+    quantidadeProduto = 0;
+    valorDesconto = 0;
+    valorAPagar = 0;
+    produtosSelecionados = {};    
+
+    // Reseta o texto mostrado
     document.getElementById('valorTotal').textContent = 'R$ 0,00';
-    valorFinal = 0;
-    document.querySelectorAll('input[type="number"]').forEach(input => input.value = '');
     document.getElementById('valorDesconto').textContent = 'R$ 0,00';
     document.getElementById('valorAPagar').textContent = 'R$ 0,00';
+    document.getElementById('produtosLista').innerHTML = 'Nenhum produto selecionado';
+
+    // Reseta os inputs
+    document.querySelectorAll('input[type="number"]').forEach(input => input.value = '');
+    document.querySelectorAll('.plus').forEach(checkbox => {checkbox.checked = false;});
+
+    // Reseta os métodos de pagamento
+    document.getElementById('pgCredito').checked = true;
+    document.getElementById('retirada').checked = true;
 }
 
 // Função para exibir modais de alerta e mensagens

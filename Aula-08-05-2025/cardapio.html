@@ -71,11 +71,11 @@
                                     <h5>R$ 15,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-xbacon">Quantidade:</label>
-                                        <input type="number" class="form-control" id="qtd-x-bacon" value="0" min="0" oninput="adicionarProduto('X-Bacon')">
+                                        <label class="input-group-text" for="qtd-xbacon">Qtd:</label>
+                                        <input type="number" class="form-control" id="qtd-x-bacon" min="0" oninput="adicionarProduto('X-Bacon')">
                                         <label class="input-group-text">Plus</label>
                                         <div class="input-group-text">
-                                            <input type="checkbox" class="form-check-input">
+                                            <input type="checkbox" class="form-check-input plus" onclick="adicionarProduto('X-Bacon')">
                                         </div>
                                     </div>
                                 </div>
@@ -92,11 +92,11 @@
                                     <h5>R$ 16,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-xsalada">Quantidade:</label>
-                                        <input type="number" value="0" class="form-control" id="qtd-x-salada" min="0" oninput="adicionarProduto('X-Salada')">
+                                        <label class="input-group-text" for="qtd-xsalada">Qtd:</label>
+                                        <input type="number" class="form-control" id="qtd-x-salada" min="0" oninput="adicionarProduto('X-Salada')">
                                         <label class="input-group-text">Plus</label>
                                         <div class="input-group-text">
-                                            <input type="checkbox" class="form-check-input">
+                                            <input type="checkbox" class="form-check-input plus" onclick="adicionarProduto('X-Salada')">
                                         </div>
                                     </div>
                                 </div>
@@ -113,7 +113,7 @@
                                     <h5>R$ 17,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-xtudo">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-xtudo">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-x-tudo" min="0" oninput="adicionarProduto('X-Tudo')">
                                     </div>
                                 </div>
@@ -130,7 +130,7 @@
                                     <h5>R$ 24,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-xcompleto">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-xcompleto">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-x-completo" min="0" oninput="adicionarProduto('X-Completo')">
                                     </div>
                                 </div>
@@ -153,11 +153,11 @@
                                     <h5>R$ 22,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-xbacon-a">Quantidade:</label>
-                                        <input type="number" value="0" class="form-control" id="qtd-x-bacon-a" min="0" oninput="adicionarProduto('X-Bacon A')">
+                                        <label class="input-group-text" for="qtd-xbacon-a">Qtd:</label>
+                                        <input type="number" class="form-control" id="qtd-x-bacon-a" min="0" oninput="adicionarProduto('X-Bacon A')">
                                         <label class="input-group-text">Plus</label>
                                         <div class="input-group-text">
-                                            <input type="checkbox" class="form-check-input">
+                                            <input type="checkbox" class="form-check-input plus" onclick="adicionarProduto('X-Bacon A')">
                                         </div>
                                     </div>
                                 </div>
@@ -174,11 +174,11 @@
                                     <h5>R$ 20,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-xsalada-a">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-xsalada-a">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-x-salada-a" min="0" oninput="adicionarProduto('X-Salada A')">
                                         <label class="input-group-text">Plus</label>
                                         <div class="input-group-text">
-                                            <input type="radio" class="form-check-input" id="plus4">
+                                            <input type="checkbox" class="form-check-input plus" onclick="adicionarProduto('X-Salada A')">
                                         </div>
                                     </div>
                                 </div>
@@ -195,7 +195,7 @@
                                     <h5>R$ 25,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-xtudo-a">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-xtudo-a">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-x-tudo-a" min="0" oninput="adicionarProduto('X-Tudo A')">
                                     </div>
                                 </div>
@@ -212,7 +212,7 @@
                                     <h5>R$ 28,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-xcompleto-a">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-xcompleto-a">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-x-completo-a" min="0" oninput="adicionarProduto('X-Completo A')">
                                     </div>
                                 </div>
@@ -235,11 +235,11 @@
                                     <h5>R$ 17,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-file-bacon">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-file-bacon">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-file-bacon" min="0" oninput="adicionarProduto('File Bacon')">
                                         <label class="input-group-text">Plus</label>
                                         <div class="input-group-text">
-                                            <input type="radio" class="form-check-input" id="plus5">
+                                            <input type="checkbox" class="form-check-input plus" onclick="adicionarProduto('File Bacon')">
                                         </div>
                                     </div>
                                 </div>
@@ -256,7 +256,7 @@
                                     <h5>R$ 19,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-file-salada">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-file-salada">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-file-salada" min="0" oninput="adicionarProduto('File Salada')">
                                     </div>
                                 </div>
@@ -273,7 +273,7 @@
                                     <h5>R$ 20,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-file-tudo">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-file-tudo">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-file-tudo" min="0" oninput="adicionarProduto('File Tudo')">
                                     </div>
                                 </div>
@@ -290,7 +290,7 @@
                                     <h5>R$ 28,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-file-completo">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-file-completo">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-file-completo" min="0" oninput="adicionarProduto('File Completo')">
                                     </div>
                                 </div>
@@ -313,11 +313,11 @@
                                     <h5>R$ 15,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-frango-bacon">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-frango-bacon">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-frango-bacon" min="0" oninput="adicionarProduto('Frango Bacon')">
                                         <label class="input-group-text">Plus</label>
                                         <div class="input-group-text">
-                                            <input type="radio" class="form-check-input" id="plus6">
+                                            <input type="checkbox" class="form-check-input plus" onclick="adicionarProduto('Frango Bacon')">
                                         </div>
                                     </div>
                                 </div>
@@ -334,7 +334,7 @@
                                     <h5>R$ 16,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-frango-salada">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-frango-salada">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-frango-salada" min="0" oninput="adicionarProduto('Frango Salada')">
                                     </div>
                                 </div>
@@ -351,7 +351,7 @@
                                     <h5>R$ 17,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-frango-tudo">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-frango-tudo">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-frango-tudo" min="0" oninput="adicionarProduto('Frango Tudo')">
                                     </div>
                                 </div>
@@ -368,7 +368,7 @@
                                     <h5>R$ 24,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-frango-completo">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-frango-completo">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-frango-completo" min="0" oninput="adicionarProduto('Frango Completo')">
                                     </div>
                                 </div>
@@ -391,11 +391,11 @@
                                     <h5>R$ 15,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-lombo-bacon">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-lombo-bacon">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-lombo-bacon" min="0" oninput="adicionarProduto('Lombo Bacon')">
                                         <label class="input-group-text">Plus</label>
                                         <div class="input-group-text">
-                                            <input type="radio" class="form-check-input" id="plus7">
+                                            <input type="checkbox" class="form-check-input plus" onclick="adicionarProduto('Lombo Bacon')">
                                         </div>
                                     </div>
                                 </div>
@@ -412,7 +412,7 @@
                                     <h5>R$ 16,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-lombo-salada">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-lombo-salada">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-lombo-salada" min="0" oninput="adicionarProduto('Lombo Salada')">
                                     </div>
                                 </div>
@@ -429,7 +429,7 @@
                                     <h5>R$ 17,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-lombo-tudo">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-lombo-tudo">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-lombo-tudo" min="0" oninput="adicionarProduto('Lombo Tudo')">
                                     </div>
                                 </div>
@@ -446,7 +446,7 @@
                                     <h5>R$ 24,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-lombo-completo">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-lombo-completo">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-lombo-completo" min="0" oninput="adicionarProduto('Lombo Completo')">
                                     </div>
                                 </div>
@@ -468,7 +468,7 @@
                                     <h5 class="flex-grow-1">R$ 8,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-batata-pequena">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-batata-pequena">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-batata-pequena" min="0" oninput="adicionarProduto('Batata Pequena')">
                                     </div>
                                 </div>
@@ -484,7 +484,7 @@
                                     <h5>R$ 12,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-batata-grande">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-batata-grande">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-batata-grande" min="0" oninput="adicionarProduto('Batata Grande')">
                                     </div>
                                 </div>
@@ -500,7 +500,7 @@
                                     <h5>R$ 7,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-refri-litro">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-refri-litro">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-refri-litro" min="0" oninput="adicionarProduto('Refri Litro')">
                                     </div>
                                 </div>
@@ -516,7 +516,7 @@
                                     <h5>R$ 3,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-refri-lata">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-refri-lata">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-refri-lata" min="0" oninput="adicionarProduto('Refri Lata')">
                                     </div>
                                 </div>
@@ -532,7 +532,7 @@
                                     <h5>R$ 6,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-cerveja-lata">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-cerveja-lata">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-cerveja-lata" min="0" oninput="adicionarProduto('Cerveja Lata')">
                                     </div>
                                 </div>
@@ -548,7 +548,7 @@
                                     <h5>R$ 1,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-molho-alho">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-molho-alho">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-molho-alho" min="0" oninput="adicionarProduto('Molho Alho')">
                                     </div>
                                 </div>
@@ -564,7 +564,7 @@
                                     <h5>R$ 1,90</h5>
                                     <hr>
                                     <div class="input-group">
-                                        <label class="input-group-text" for="qtd-molho-casa">Quantidade:</label>
+                                        <label class="input-group-text" for="qtd-molho-casa">Qtd:</label>
                                         <input type="number" class="form-control" id="qtd-molho-casa" min="0" oninput="adicionarProduto('Molho Casa')">
                                     </div>
                                 </div>
@@ -582,7 +582,7 @@
                             <div class="card card-body bg-light text-dark">
                                 <h4 class="text-center mb-4">Resumo do Pedido</h4>
                                 <p>
-                                    <span id="produtosLista"></span>
+                                    <span id="produtosLista">Nenhum produto selecionado</span>
                                 </p>
 
                                 <h5>Total: <span id="valorTotal">R$ 0,00</span></h5>
