@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box; /* Inclui padding e border no tamanho total dos elementos */
+    padding: 0;             /* Remove o padding padrão */
+    margin: 0;              /* Remove a margem padrão */
+}
+
+body {
+    font-family: "Quicksand", sans-serif; /* Define a fonte principal */
+    font-optical-sizing: auto;            /* Ajuste óptico da fonte */
+    font-weight: 450;                     /* Peso da fonte */
+    font-style: normal;                   /* Estilo normal da fonte */
+    min-height: 100vh;                    /* Altura mínima igual à altura da tela */
+    width: 100%;                          /* Largura total */
+}
+
+aside {
+    max-height: 0rem; /* Limita a altura máxima do aside a 0 (permite a rolagem sticky) */
+}
+
+.bg-roxo {
+    background-color: #6610f2;
+}
+
+.card {
+    font-size: 0.9rem; /* Define o tamanho da fonte dos cards */
+}
+
+.form-control {
+    width: 50px; /* Define a largura dos campos de formulário */
+}
+
+.nav-link:hover {
+    color: rgb(189, 189, 189); /* Cor dos links ao passar o mouse */
+}
+
+.navbar-toggler {
+    background-color: white; /* Cor de fundo do botão de menu */
+    border-radius: 100%;       /* Deixa o botão redondo */
+    height: 50px;              /* Altura do botão */
+    border: none;              /* Remove a borda */
+    outline: none;             /* Remove o contorno ao focar */
+}
