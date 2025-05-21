@@ -205,18 +205,18 @@
                                     </p>
                                     <select class="form-select w-75" name="produto" id="produto">
                                         <option value="" selected disabled>Selecione...</option>
-                                        <option id="prod1">Ninho</option>
-                                        <option id="prod2">Mousse</option>
-                                        <option id="prod3">Mousse 2</option>
-                                        <option id="prod4">Ovomaltine</option>
-                                        <option id="prod5">Gotas de Chocolate</option>
-                                        <option id="prod6">Choco Kids</option>
-                                        <option id="prod7">Nucita</option>
-                                        <option id="prod8">Bis</option>
-                                        <option id="prod9">Ki Delícia</option>
-                                        <option id="prod10">Fitness</option>
-                                        <option id="prod11">Creme de Cupuaçu</option>
-                                        <option id="prod12">Casadinho</option>
+                                        <option value="Ninho">Ninho</option>
+                                        <option value="Mousse">Mousse</option>
+                                        <option value="Mousse 2">Mousse 2</option>
+                                        <option value="Ovomaltine">Ovomaltine</option>
+                                        <option value="Gotas de Chocolate">Gotas de Chocolate</option>
+                                        <option value="Choco Kids">Choco Kids</option>
+                                        <option value="Nucita">Nucita</option>
+                                        <option value="Bis">Bis</option>
+                                        <option value="Ki Delícia">Ki Delícia</option>
+                                        <option value="Fitness">Fitness</option>
+                                        <option value="Creme de Cupuaçu">Creme de Cupuaçu</option>
+                                        <option value="Casadinho">Casadinho</option>
                                     </select>
                                 </p>
                                 <hr>
@@ -224,21 +224,21 @@
                                     <p>Escolha o tamanho do copo: </p>
                                     <form>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="tamanhoCopo" id="300ml" checked onclick="valorPedido()">
+                                            <input class="form-check-input tamaCopo" type="radio" name="tamanhoCopo" id="300ml" value="300ml" checked onclick="valorPedido()">
                                             <label class="form-check-label" for="tamanhoCopo">
-                                                300 ml
+                                                300ml
                                             </label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="tamanhoCopo" id="500ml" onclick="valorPedido()">
+                                            <input class="form-check-input tamaCopo" type="radio" name="tamanhoCopo" id="500ml" value="500ml" onclick="valorPedido()">
                                             <label class="form-check-label" for="tamanhoCopo">
-                                                500 ml
+                                                500ml
                                             </label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="tamanhoCopo" id="1l" onclick="valorPedido()">
+                                            <input class="form-check-input tamaCopo" type="radio" name="tamanhoCopo" id="1l" value="1L" onclick="valorPedido()">
                                             <label class="form-check-label" for="tamanhoCopo">
-                                                1 L
+                                                1L
                                             </label>
                                         </div>
                                     </form>

@@ -1,23 +1,36 @@
-// Variável global para armazenar temporariamente o valor do pedido
+// Variáveis globais
 var valorTemp = 0;
+var produtoNome = '';
+var tamanhoCopo = '';
+var copo = '';
 
 // Função para calcular o valor total do pedido
 function valorPedido() {
     // Obtém o elemento de quantidade e converte seu valor para um número inteiro
     const quant = document.getElementById('quantidade');
     var quantidade = parseInt(quant.value);
+
+    // Obtém o nome do produto selecionado
+    const produto = document.getElementById('produto').value;
+
+    // Obtém o valor do tamanho do copo
+    // copo = document.closest('.form-check').querySelectorAll('tamaCopo').value
+
     var valorCopo = 0;
 
     // Define o valor do copo com base na opção selecionada
     if (document.getElementById('300ml').checked) {
         valorCopo = 8.00;
-    }
-    if (document.getElementById('500ml').checked) {
+        copo = document.getElementById('300ml').value; // Obtém o valor do tamanho do copo
+    } else if (document.getElementById('500ml').checked) {
         valorCopo = 12.00;
-    }
-    if (document.getElementById('1l').checked) {
+        copo = document.getElementById('500ml').value;
+    } else if (document.getElementById('1l').checked) {
         valorCopo = 20.00;
+        copo = document.getElementById('1l').value;
     }
+
+
 
     // Calcula o valor final do pedido
     var valorFinal = quantidade * valorCopo;
@@ -39,6 +52,8 @@ function valorPedido() {
     
     // Armazena temporariamente o valor final do pedido
     valorTemp = valorFinal;
+    produtoNome = produto;
+    tamanhoCopo = copo;
 }
 
 // Função para finalizar o pedido
@@ -88,6 +103,12 @@ function resetarPedido() {
 function modal(tipo) {
     var modalContent = ''; // Variável que armazenará o conteúdo do modal
     var valor = valorTemp; // Obtém o valor temporário do pedido
+    var nome = produtoNome; // Obtém o produto selecionado
+    var copoT = tamanhoCopo; // Obtém o tamanho do copo selecionado
+
+    if(nome == '' || copoT == '') {
+        tipo = 'finalizar-erro';
+    }
 
     // Define o conteúdo do modal com base no tipo solicitado
     switch (tipo) {
@@ -122,6 +143,7 @@ function modal(tipo) {
                     <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Fechar modal"></button>
                 </div>
                 <div class="modal-body">
+                    <p>Você escolheu um açaí ${nome} de ${copoT}.</p>
                     <p>Valor do pedido: ${valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.</p>
                     <p>Obrigado por comprar com a gente. Volte sempre!</p>
                 </div>
