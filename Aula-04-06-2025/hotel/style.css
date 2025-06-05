@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 450;
+    font-style: normal;
+}
+
+header, footer {
+    background-image: linear-gradient(to right, #a0e4ff, #D4A8FC);
+}
+
+img {
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+}
+
+.formulario {
+    background-color: #292e33;
+}
+
+#tabela-container {
+    overflow-x: auto;
+}
